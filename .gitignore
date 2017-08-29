@@ -1,0 +1,6 @@
+*.bak
+*~
+.*.swp
+.build
+Dist-Zilla-Plugin-AutoPrereqs-Perl-Critic-*
+tmp
