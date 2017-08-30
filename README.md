@@ -6,9 +6,10 @@ Dist::Zilla::Plugin::AutoPrereqs::Perl::Critic - automatically extract Perl::Cri
 
     # in dist.ini:
     [AutoPrereqs::Perl::Critic]
-    critic_config = .perlcriticrc  ; defaults to not specify a profile
-    phase         = develop        ; default
-    type          = requires       ; default
+    critic_config        = .perlcriticrc  ; defaults to not specify a profile
+    phase                = develop        ; default
+    type                 = requires       ; default
+    remove_core_policies = 1              ; default
 
 # DESCRIPTION
 
@@ -25,6 +26,18 @@ directory.
 
 By default, the dependencies are added to the **develop** **phase**. This can be
 changed to every valid phase.
+
+## remove\_core\_policies
+
+By default, policies that are included in the latest
+[Perl::Critic](https://metacpan.org/pod/Perl::Critic) distribution are not added as dependency. This
+can be changed by setting **remove\_core\_policies** to **0**.
+
+Note: [Perl::Critic](https://metacpan.org/pod/Perl::Critic) itself is always added as dependency
+which will come with the core policies.
+
+Note: This feature needs HTTP access to **cpanmetadb.plackperl.org**. Please
+disable this feature if you're system cannot access that server.
 
 ## type
 

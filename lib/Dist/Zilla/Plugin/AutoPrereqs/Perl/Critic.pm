@@ -10,8 +10,11 @@ with qw(
   Dist::Zilla::Role::PrereqSource
 );
 
-use Perl::Critic;
+use CPAN::Meta::YAML;
+use HTTP::Tiny;
 use Moose::Util::TypeConstraints 'enum';
+use Perl::Critic;
+
 use namespace::autoclean;
 
 has critic_config => (
@@ -26,18 +29,32 @@ has phase => (
     default => 'develop',
 );
 
+has remove_core_policies => (
+    is      => 'ro',
+    isa     => 'Bool',
+    default => 1,
+);
+
 has type => (
     is      => 'ro',
     isa     => enum( [qw(requires recommends suggests conflicts)] ),
     default => 'requires',
 );
 
+has _core_policies => (
+    is      => 'ro',
+    isa     => 'HashRef',
+    lazy    => 1,
+    default => sub { shift->_build_core_policies() },
+);
+
 sub register_prereqs {
     my ($self) = @_;
 
-    my $type          = $self->type;
-    my $phase         = $self->phase;
-    my $critic_config = $self->critic_config;
+    my $type                 = $self->type;
+    my $phase                = $self->phase;
+    my $critic_config        = $self->critic_config;
+    my $remove_core_policies = $self->remove_core_policies;
 
     my %critic_args = ();
     if ( defined $critic_config ) {
@@ -46,9 +63,12 @@ sub register_prereqs {
 
     my $critic = Perl::Critic->new(%critic_args);
 
+  POLICY:
     for my $policy ( $critic->config()->policies() ) {
         my $policy_module  = ref $policy;
         my $policy_version = $policy->VERSION();
+
+        next POLICY if $remove_core_policies and exists $self->_core_policies->{$policy_module};
 
         $self->zilla->register_prereqs( { phase => $phase, type => $type }, $policy_module => $policy_version );
     }
@@ -56,6 +76,26 @@ sub register_prereqs {
     $self->zilla->register_prereqs( { phase => $phase, type => $type }, 'Perl::Critic' => Perl::Critic->VERSION() );
 
     return;
+}
+
+sub _build_core_policies {
+    my ($self) = @_;
+
+    my $url = 'http://cpanmetadb.plackperl.org/v1.0/package/Perl::Critic';
+    my $ua  = HTTP::Tiny->new;
+
+    # Download latest Perl::Critic meta data
+    $self->log("Downloading '$url'...");
+    my $res = $ua->get($url);
+
+    if ( $res->{status} ne '200' ) {
+        $self->log_fatal("Unable to download latest package information for Perl::Critic. Please ensure that your system can access '$url' or disable 'remove_core_policies' in your dist.ini");
+    }
+
+    my $yaml     = CPAN::Meta::YAML->read_string( $res->{content} );
+    my $provides = ${$yaml}[0]->{provides};
+
+    return $provides;
 }
 
 __PACKAGE__->meta->make_immutable;
@@ -76,9 +116,10 @@ Dist::Zilla::Plugin::AutoPrereqs::Perl::Critic - automatically extract Perl::Cri
 
   # in dist.ini:
   [AutoPrereqs::Perl::Critic]
-  critic_config = .perlcriticrc  ; defaults to not specify a profile
-  phase         = develop        ; default
-  type          = requires       ; default
+  critic_config        = .perlcriticrc  ; defaults to not specify a profile
+  phase                = develop        ; default
+  type                 = requires       ; default
+  remove_core_policies = 1              ; default
 
 =head1 DESCRIPTION
 
@@ -95,6 +136,18 @@ directory.
 
 By default, the dependencies are added to the B<develop> B<phase>. This can be
 changed to every valid phase.
+
+=head2 remove_core_policies
+
+By default, policies that are included in the latest
+L<Perl::Critic|Perl::Critic> distribution are not added as dependency. This
+can be changed by setting B<remove_core_policies> to B<0>.
+
+Note: L<Perl::Critic|Perl::Critic> itself is always added as dependency
+which will come with the core policies.
+
+Note: This feature needs HTTP access to B<cpanmetadb.plackperl.org>. Please
+disable this feature if you're system cannot access that server.
 
 =head2 type
 

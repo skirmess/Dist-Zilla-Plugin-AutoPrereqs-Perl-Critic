@@ -162,13 +162,48 @@ my $perl_critic_version = Perl::Critic->VERSION();
     my $expected = {
         'test' => {
             'recommends' => {
+                'Perl::Critic' => $perl_critic_version,
+            },
+        },
+    };
+
+    is_deeply( $tzil->distmeta->{prereqs}, $expected, 'core policy is not added to prereq' );
+}
+
+{
+    my $tzil = Builder->from_config(
+        { dist_root => 'corpus/dist/DZ3' },
+        {
+            add_files => {
+                'source/dist.ini' => simple_ini(
+                    'GatherDir',
+                    [
+                        'AutoPrereqs::Perl::Critic',
+
+                        {
+                            critic_config        => 'perl_critic_config.txt',
+                            phase                => 'test',
+                            type                 => 'recommends',
+                            remove_core_policies => 0,
+                        }
+                    ],
+                ),
+            },
+        }
+    );
+
+    is( exception { $tzil->build; }, undef, 'Built dist successfully' );
+
+    my $expected = {
+        'test' => {
+            'recommends' => {
                 'Perl::Critic'                                                    => $perl_critic_version,
                 'Perl::Critic::Policy::Modules::RequireNoMatchVarsWithUseEnglish' => $perl_critic_version,
             },
         },
     };
 
-    is_deeply( $tzil->distmeta->{prereqs}, $expected, q{activated policy is added to prereqs} );
+    is_deeply( $tzil->distmeta->{prereqs}, $expected, q{'remove_core_policies' argument works} );
 }
 
 done_testing();
