@@ -17,3 +17,6 @@ __DATA__
 <sven.kirmess@kzone.ch>
 Kirmess
 Sven
+cpanmetadb
+org
+plackperl
