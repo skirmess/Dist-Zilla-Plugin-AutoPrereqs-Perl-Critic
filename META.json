@@ -103,6 +103,20 @@
       },
       "plugins" : [
          {
+            "class" : "Dist::Zilla::Plugin::Bootstrap::lib",
+            "config" : {
+               "Dist::Zilla::Role::Bootstrap" : {
+                  "$Dist::Zilla::Role::Bootstrap::VERSION" : "1.001004",
+                  "distname" : "Dist-Zilla-Plugin-AutoPrereqs-Perl-Critic",
+                  "fallback" : "1",
+                  "try_built" : null,
+                  "try_built_method" : "mtime"
+               }
+            },
+            "name" : "Bootstrap::lib",
+            "version" : "1.001002"
+         },
+         {
             "class" : "Dist::Zilla::Plugin::PromptIfStale",
             "config" : {
                "Dist::Zilla::Plugin::PromptIfStale" : {
@@ -327,6 +341,11 @@
             "class" : "Dist::Zilla::Plugin::AutoPrereqs",
             "name" : "@Author::SKIRMESS/AutoPrereqs",
             "version" : "6.010"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::AutoPrereqs::Perl::Critic",
+            "name" : "@Author::SKIRMESS/AutoPrereqs::Perl::Critic",
+            "version" : "0.002"
          },
          {
             "class" : "Dist::Zilla::Plugin::Authority",
@@ -634,25 +653,6 @@
             },
             "name" : "@Author::SKIRMESS/Git::Push",
             "version" : "2.042"
-         },
-         {
-            "class" : "Dist::Zilla::Plugin::Bootstrap::lib",
-            "config" : {
-               "Dist::Zilla::Role::Bootstrap" : {
-                  "$Dist::Zilla::Role::Bootstrap::VERSION" : "1.001004",
-                  "distname" : "Dist-Zilla-Plugin-AutoPrereqs-Perl-Critic",
-                  "fallback" : "1",
-                  "try_built" : null,
-                  "try_built_method" : "mtime"
-               }
-            },
-            "name" : "Bootstrap::lib",
-            "version" : "1.001002"
-         },
-         {
-            "class" : "Dist::Zilla::Plugin::AutoPrereqs::Perl::Critic",
-            "name" : "AutoPrereqs::Perl::Critic",
-            "version" : "0.001"
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",

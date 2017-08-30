@@ -2,6 +2,9 @@ Revision history for Dist-Zilla-Plugin-AutoPrereqs-Perl-Critic
 
 {{$NEXT}}
 
+  - Removed AutoPrereqs::Perl::Critic from dist.ini because we are part of
+    the Author::SKIRMESS bundle
+
 0.002  2017-08-30 21:02:54 UTC
 
   - Remove dependencies or core plugins
