@@ -3,7 +3,7 @@ package Dist::Zilla::Plugin::AutoPrereqs::Perl::Critic;
 use strict;
 use warnings;
 
-our $VERSION = '0.001';
+our $VERSION = '0.002';
 
 use Moose;
 with qw(

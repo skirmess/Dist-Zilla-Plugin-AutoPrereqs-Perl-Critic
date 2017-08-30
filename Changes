@@ -2,6 +2,8 @@ Revision history for Dist-Zilla-Plugin-AutoPrereqs-Perl-Critic
 
 {{$NEXT}}
 
+0.002  2017-08-30 21:02:54 UTC
+
   - Remove dependencies or core plugins
   - Added argument remove_core_policies to also depend on core plugins
 

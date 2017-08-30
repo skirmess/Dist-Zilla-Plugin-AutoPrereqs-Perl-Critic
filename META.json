@@ -81,7 +81,7 @@
    "provides" : {
       "Dist::Zilla::Plugin::AutoPrereqs::Perl::Critic" : {
          "file" : "lib/Dist/Zilla/Plugin/AutoPrereqs/Perl/Critic.pm",
-         "version" : "0.001"
+         "version" : "0.002"
       }
    },
    "release_status" : "stable",
@@ -96,7 +96,7 @@
          "web" : "https://github.com/skirmess/Dist-Zilla-Plugin-AutoPrereqs-Perl-Critic"
       }
    },
-   "version" : "0.001",
+   "version" : "0.002",
    "x_Dist_Zilla" : {
       "perl" : {
          "version" : "5.024000"
@@ -603,7 +603,7 @@
                   "branch" : null,
                   "changelog" : "Changes",
                   "signed" : 0,
-                  "tag" : "0.001",
+                  "tag" : "0.002",
                   "tag_format" : "%v",
                   "tag_message" : ""
                },
