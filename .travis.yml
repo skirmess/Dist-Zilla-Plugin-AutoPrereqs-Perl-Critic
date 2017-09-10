@@ -1,5 +1,9 @@
+# Automatically generated file
+# Dist::Zilla::Plugin::Author::SKIRMESS::RepositoryBase 0.010
+
 language: perl
 perl:
+  - '5.8'
   - '5.26'
   - '5.24'
   - '5.22'
@@ -9,7 +13,6 @@ perl:
   - '5.14'
   - '5.12'
   - '5.10'
-  - '5.8'
 before_install:
   - export AUTOMATED_TESTING=1
 install:
