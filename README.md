@@ -2,6 +2,10 @@
 
 Dist::Zilla::Plugin::AutoPrereqs::Perl::Critic - automatically extract Perl::Critic policy prereqs
 
+# VERSION
+
+Version 0.003
+
 # SYNOPSIS
 
     # in dist.ini:
