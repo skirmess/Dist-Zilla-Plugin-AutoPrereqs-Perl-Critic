@@ -40,7 +40,6 @@
             "Perl::Critic::Policy::Moose::RequireMakeImmutable" : "1.05",
             "Perl::Critic::Utils" : "0",
             "Pod::Wordlist" : "0",
-            "Test::CPAN::Changes" : "0",
             "Test::CPAN::Meta" : "0.12",
             "Test::CPAN::Meta::JSON" : "0",
             "Test::CleanNamespaces" : "0",
@@ -121,7 +120,6 @@
          "Perl::Critic::Policy::Moose::RequireMakeImmutable" : "1.05",
          "Perl::Critic::Utils" : "1.130",
          "Pod::Wordlist" : "1.20",
-         "Test::CPAN::Changes" : "0.400002",
          "Test::CPAN::Meta" : "0.25",
          "Test::CPAN::Meta::JSON" : "0.16",
          "Test::CleanNamespaces" : "0.22",
@@ -268,12 +266,12 @@
          {
             "class" : "Dist::Zilla::Plugin::Author::SKIRMESS::RepositoryBase",
             "name" : "@Author::SKIRMESS/Author::SKIRMESS::RepositoryBase",
-            "version" : "0.012"
+            "version" : "0.014"
          },
          {
             "class" : "Dist::Zilla::Plugin::Author::SKIRMESS::InsertVersion",
             "name" : "@Author::SKIRMESS/Author::SKIRMESS::InsertVersion",
-            "version" : "0.012"
+            "version" : "0.014"
          },
          {
             "class" : "Dist::Zilla::Plugin::NextRelease",
@@ -308,7 +306,6 @@
                      "xt/author/pod-syntax.t",
                      "xt/author/portability.t",
                      "xt/author/test-version.t",
-                     "xt/release/changes.t",
                      "xt/release/eol.t",
                      "xt/release/kwalitee.t",
                      "xt/release/manifest.t",
@@ -349,7 +346,7 @@
          {
             "class" : "Dist::Zilla::Plugin::AutoPrereqs::Perl::Critic",
             "name" : "@Author::SKIRMESS/AutoPrereqs::Perl::Critic",
-            "version" : "0.002"
+            "version" : "0.003"
          },
          {
             "class" : "Dist::Zilla::Plugin::SetScriptShebang",
@@ -641,7 +638,6 @@
                      "xt/author/pod-syntax.t",
                      "xt/author/portability.t",
                      "xt/author/test-version.t",
-                     "xt/release/changes.t",
                      "xt/release/eol.t",
                      "xt/release/kwalitee.t",
                      "xt/release/manifest.t",
