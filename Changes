@@ -2,6 +2,7 @@ Revision history for Dist-Zilla-Plugin-AutoPrereqs-Perl-Critic
 
 {{$NEXT}}
 
+  - Added VERSION section to pod
   - Removed AutoPrereqs::Perl::Critic from dist.ini because we are part of
     the Author::SKIRMESS bundle
 

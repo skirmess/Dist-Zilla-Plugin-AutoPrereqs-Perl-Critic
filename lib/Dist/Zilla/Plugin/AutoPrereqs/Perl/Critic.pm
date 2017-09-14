@@ -112,6 +112,8 @@ __END__
 
 Dist::Zilla::Plugin::AutoPrereqs::Perl::Critic - automatically extract Perl::Critic policy prereqs
 
+=head1 VERSION
+
 =head1 SYNOPSIS
 
   # in dist.ini:
