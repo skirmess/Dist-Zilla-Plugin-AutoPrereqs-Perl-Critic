@@ -4,7 +4,7 @@ Dist::Zilla::Plugin::AutoPrereqs::Perl::Critic - automatically extract Perl::Cri
 
 # VERSION
 
-Version 0.003
+Version 0.004
 
 # SYNOPSIS
 

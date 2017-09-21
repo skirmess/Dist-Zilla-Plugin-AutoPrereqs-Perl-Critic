@@ -88,7 +88,7 @@
    "provides" : {
       "Dist::Zilla::Plugin::AutoPrereqs::Perl::Critic" : {
          "file" : "lib/Dist/Zilla/Plugin/AutoPrereqs/Perl/Critic.pm",
-         "version" : "0.003"
+         "version" : "0.004"
       }
    },
    "release_status" : "stable",
@@ -103,7 +103,7 @@
          "web" : "https://github.com/skirmess/Dist-Zilla-Plugin-AutoPrereqs-Perl-Critic"
       }
    },
-   "version" : "0.003",
+   "version" : "0.004",
    "x_BuiltWith" : {
       "modules" : {
          "CPAN::Meta::YAML" : "0.018",
@@ -707,7 +707,7 @@
                   "branch" : null,
                   "changelog" : "Changes",
                   "signed" : 0,
-                  "tag" : "0.003",
+                  "tag" : "0.004",
                   "tag_format" : "%v",
                   "tag_message" : ""
                },
