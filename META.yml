@@ -185,11 +185,11 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Author::SKIRMESS::RepositoryBase
       name: '@Author::SKIRMESS/Author::SKIRMESS::RepositoryBase'
-      version: '0.020'
+      version: '0.022'
     -
       class: Dist::Zilla::Plugin::Author::SKIRMESS::InsertVersion
       name: '@Author::SKIRMESS/Author::SKIRMESS::InsertVersion'
-      version: '0.020'
+      version: '0.022'
     -
       class: Dist::Zilla::Plugin::NextRelease
       name: '@Author::SKIRMESS/NextRelease'
@@ -470,7 +470,7 @@ x_Dist_Zilla:
         Dist::Zilla::Plugin::CopyFilesFromRelease:
           filename: []
           match:
-            - .pm$
+            - \.pm$
             - ^bin/
       name: '@Author::SKIRMESS/CopyFilesFromRelease'
       version: '0.006'
@@ -513,6 +513,7 @@ x_Dist_Zilla:
             - xt/release/meta-yaml.t
           allow_dirty_match:
             - (?^:\.pm$)
+            - (?^:^bin/)
           changelog: Changes
         Dist::Zilla::Role::Git::Repo:
           git_version: 2.11.0

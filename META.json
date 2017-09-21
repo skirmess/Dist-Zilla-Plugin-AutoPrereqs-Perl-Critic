@@ -270,12 +270,12 @@
          {
             "class" : "Dist::Zilla::Plugin::Author::SKIRMESS::RepositoryBase",
             "name" : "@Author::SKIRMESS/Author::SKIRMESS::RepositoryBase",
-            "version" : "0.020"
+            "version" : "0.022"
          },
          {
             "class" : "Dist::Zilla::Plugin::Author::SKIRMESS::InsertVersion",
             "name" : "@Author::SKIRMESS/Author::SKIRMESS::InsertVersion",
-            "version" : "0.020"
+            "version" : "0.022"
          },
          {
             "class" : "Dist::Zilla::Plugin::NextRelease",
@@ -636,7 +636,7 @@
                "Dist::Zilla::Plugin::CopyFilesFromRelease" : {
                   "filename" : [],
                   "match" : [
-                     ".pm$",
+                     "\\.pm$",
                      "^bin/"
                   ]
                }
@@ -684,7 +684,8 @@
                      "xt/release/meta-yaml.t"
                   ],
                   "allow_dirty_match" : [
-                     "(?^:\\.pm$)"
+                     "(?^:\\.pm$)",
+                     "(?^:^bin/)"
                   ],
                   "changelog" : "Changes"
                },
