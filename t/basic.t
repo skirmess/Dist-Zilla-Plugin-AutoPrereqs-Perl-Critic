@@ -17,7 +17,10 @@ use Perl::Critic;
 my $perl_critic_version = Perl::Critic->VERSION();
 
 my $http_tiny = Test::MockModule->new('HTTP::Tiny');
-$http_tiny->mock( 'get', Local::HTTP::Tiny::Mock::get() );
+
+note('with working Intenet access (simulated)');
+
+$http_tiny->mock( 'get', Local::HTTP::Tiny::Mock::get_200() );
 
 {
     my $tzil = Builder->from_config(
@@ -211,6 +214,36 @@ $http_tiny->mock( 'get', Local::HTTP::Tiny::Mock::get() );
     };
 
     is_deeply( $tzil->distmeta->{prereqs}, $expected, q{'remove_core_policies' argument works} );
+}
+
+note('without working Intenet access (simulated)');
+
+$http_tiny->mock( 'get', Local::HTTP::Tiny::Mock::get_404() );
+
+{
+    my $tzil = Builder->from_config(
+        { dist_root => 'corpus/dist/DZ3' },
+        {
+            add_files => {
+                'source/dist.ini' => simple_ini(
+                    'GatherDir',
+                    [
+                        'AutoPrereqs::Perl::Critic',
+
+                        {
+                            critic_config => 'perl_critic_config.txt',
+                            phase         => 'test',
+                            type          => 'recommends',
+                        }
+                    ],
+                ),
+            },
+        }
+    );
+
+    my $msg = quotemeta q{[AutoPrereqs::Perl::Critic] Unable to download latest package information for Perl::Critic. Please ensure that your system can access 'http://cpanmetadb.plackperl.org/v1.0/package/Perl::Critic' or disable 'remove_core_policies' in your dist.ini};
+
+    like( exception { $tzil->build; }, qr{$msg}xsm, 'throws an exception if http://cpanmetadb.plackperl.org/v1.0/package/Perl::Critic cannot be downloaded' );
 }
 
 done_testing();

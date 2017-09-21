@@ -4,9 +4,10 @@ use 5.006;
 use strict;
 use warnings;
 
+## no critic (ValuesAndExpressions::ProhibitEmptyQuotes)
 ## no critic (ValuesAndExpressions::ProhibitImplicitNewlines)
 
-sub get {
+sub get_200 {
 
     # perl -e 'use HTTP::Tiny; use Data::Dumper; print Dumper(HTTP::Tiny->new->get(q{http://cpanmetadb.plackperl.org/v1.0/package/Perl::Critic}));'
 
@@ -241,6 +242,43 @@ version: 1.130
         };
     };
 }
+
+sub get_404 {
+
+    # perl -e 'use HTTP::Tiny; use Data::Dumper; print Dumper(HTTP::Tiny->new->get(q{http://cpanmetadb.plackperl.org/v1.0/package/Perl::Critic_does_not_exist}));'
+
+    return sub {
+        return {
+            'headers' => {
+                'accept-ranges' => 'bytes',
+                'x-cache'       => 'MISS, MISS',
+                'date'          => 'Thu, 21 Sep 2017 19:16:05 GMT',
+                'server'        => 'nginx/1.6.3',
+                'content-type'  => 'text/plain',
+                'via'           => [
+                    '1.1 varnish',
+                    '1.1 varnish'
+                ],
+                'fastly-debug-digest' => 'abe8f8abc3c33a054b261732aa0cb98d62f1ca227a5aafd2fa53981ccd3d1f62',
+                'connection'          => 'keep-alive',
+                'x-served-by'         => 'cache-sjc3151-SJC, cache-hhn1538-HHN',
+                'x-timer'             => 'S1506021365.113918,VS0,VE208',
+                'x-cache-hits'        => '0, 0',
+                'x-runtime'           => '0.046718',
+                'content-length'      => '10',
+                'age'                 => '0'
+            },
+            'protocol' => 'HTTP/1.1',
+            'content'  => 'Not found
+',
+            'success' => '',
+            'status'  => '404',
+            'url'     => 'http://cpanmetadb.plackperl.org/v1.0/package/Perl::Critic_does_not_exist',
+            'reason'  => 'Not Found'
+        };
+    };
+}
+
 1;
 
 # vim: ts=4 sts=4 sw=4 et: syntax=perl

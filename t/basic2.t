@@ -19,7 +19,7 @@ use Perl::Critic;
 my $perl_critic_version = Perl::Critic->VERSION();
 
 my $http_tiny = Test::MockModule->new('HTTP::Tiny');
-$http_tiny->mock( 'get', Local::HTTP::Tiny::Mock::get() );
+$http_tiny->mock( 'get', Local::HTTP::Tiny::Mock::get_200() );
 
 {
     my $tzil = Builder->from_config(

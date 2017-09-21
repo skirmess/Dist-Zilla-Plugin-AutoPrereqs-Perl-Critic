@@ -2,6 +2,7 @@ Revision history for Dist-Zilla-Plugin-AutoPrereqs-Perl-Critic
 
 {{$NEXT}}
 
+  - Added a test for no Internet access
   - Require no Internet access for tests
 
 0.003  2017-09-14 19:21:17 UTC
