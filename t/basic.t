@@ -5,12 +5,19 @@ use warnings;
 
 use Test::DZil;
 use Test::Fatal;
+use Test::MockModule;
 use Test::More;
+
+use lib 't/lib';
+use Local::HTTP::Tiny::Mock;
 
 use Dist::Zilla::Plugin::AutoPrereqs::Perl::Critic;
 use Perl::Critic;
 
 my $perl_critic_version = Perl::Critic->VERSION();
+
+my $http_tiny = Test::MockModule->new('HTTP::Tiny');
+$http_tiny->mock( 'get', Local::HTTP::Tiny::Mock::get() );
 
 {
     my $tzil = Builder->from_config(

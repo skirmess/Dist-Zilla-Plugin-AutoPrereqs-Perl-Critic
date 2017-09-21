@@ -78,6 +78,7 @@
          "requires" : {
             "Test::DZil" : "0",
             "Test::Fatal" : "0",
+            "Test::MockModule" : "0",
             "Test::More" : "0",
             "lib" : "0",
             "perl" : "5.006"
@@ -131,6 +132,7 @@
          "Test::Fatal" : "0.014",
          "Test::Kwalitee" : "1.26",
          "Test::MinimumVersion" : "0.101082",
+         "Test::MockModule" : "0.12",
          "Test::Mojibake" : "1.3",
          "Test::More" : "1.302096",
          "Test::NoTabs" : "2.00",

@@ -30,6 +30,7 @@ my %WriteMakefileArgs = (
   "TEST_REQUIRES" => {
     "Test::DZil" => 0,
     "Test::Fatal" => 0,
+    "Test::MockModule" => 0,
     "Test::More" => 0,
     "lib" => 0
   },
@@ -49,6 +50,7 @@ my %FallbackPrereqs = (
   "Perl::Critic" => 0,
   "Test::DZil" => 0,
   "Test::Fatal" => 0,
+  "Test::MockModule" => 0,
   "Test::More" => 0,
   "lib" => 0,
   "namespace::autoclean" => 0,
