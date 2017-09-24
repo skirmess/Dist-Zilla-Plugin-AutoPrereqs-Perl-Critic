@@ -185,11 +185,11 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Author::SKIRMESS::RepositoryBase
       name: '@Author::SKIRMESS/Author::SKIRMESS::RepositoryBase'
-      version: '0.022'
+      version: '0.023'
     -
       class: Dist::Zilla::Plugin::Author::SKIRMESS::InsertVersion
       name: '@Author::SKIRMESS/Author::SKIRMESS::InsertVersion'
-      version: '0.022'
+      version: '0.023'
     -
       class: Dist::Zilla::Plugin::NextRelease
       name: '@Author::SKIRMESS/NextRelease'
@@ -211,6 +211,7 @@ x_Dist_Zilla:
             - README.md
             - cpanfile
             - dist.ini
+            - t/00-load.t
             - xt/author/clean-namespaces.t
             - xt/author/critic.t
             - xt/author/minimum_version.t
@@ -254,7 +255,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::AutoPrereqs::Perl::Critic
       name: '@Author::SKIRMESS/AutoPrereqs::Perl::Critic'
-      version: '0.003'
+      version: '0.004'
     -
       class: Dist::Zilla::Plugin::SetScriptShebang
       name: '@Author::SKIRMESS/SetScriptShebang'
@@ -494,6 +495,7 @@ x_Dist_Zilla:
             - README.md
             - cpanfile
             - dist.ini
+            - t/00-load.t
             - xt/author/clean-namespaces.t
             - xt/author/critic.t
             - xt/author/minimum_version.t
