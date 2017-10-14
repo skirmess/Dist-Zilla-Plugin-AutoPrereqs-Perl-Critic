@@ -81,4 +81,4 @@ This is free software, licensed under:
 
 [Dist::Zilla::Plugin::AutoPrereqs](https://metacpan.org/pod/Dist::Zilla::Plugin::AutoPrereqs),
 [Perl::Critic](https://metacpan.org/pod/Perl::Critic),
-[Test::Perl::Critic](https://metacpan.org/pod/Test::Perl::Critic),
+[Test::Perl::Critic](https://metacpan.org/pod/Test::Perl::Critic)

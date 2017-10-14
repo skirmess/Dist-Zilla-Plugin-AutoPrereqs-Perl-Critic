@@ -1,5 +1,6 @@
 package Dist::Zilla::Plugin::AutoPrereqs::Perl::Critic;
 
+use 5.006;
 use strict;
 use warnings;
 
@@ -56,7 +57,7 @@ sub register_prereqs {
     my $critic_config        = $self->critic_config;
     my $remove_core_policies = $self->remove_core_policies;
 
-    my %critic_args = ();
+    my %critic_args;
     if ( defined $critic_config ) {
         $critic_args{-profile} = $critic_config;
     }
@@ -191,7 +192,7 @@ This is free software, licensed under:
 
 L<Dist::Zilla::Plugin::AutoPrereqs|Dist::Zilla::Plugin::AutoPrereqs>,
 L<Perl::Critic|Perl::Critic>,
-L<Test::Perl::Critic|Test::Perl::Critic>,
+L<Test::Perl::Critic|Test::Perl::Critic>
 
 =cut
 
