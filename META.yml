@@ -28,7 +28,7 @@ no_index:
 provides:
   Dist::Zilla::Plugin::AutoPrereqs::Perl::Critic:
     file: lib/Dist/Zilla/Plugin/AutoPrereqs/Perl/Critic.pm
-    version: '0.004'
+    version: '0.005'
 requires:
   CPAN::Meta::YAML: '0'
   CPAN::Version: '0'
@@ -46,7 +46,7 @@ resources:
   bugtracker: https://github.com/skirmess/Dist-Zilla-Plugin-AutoPrereqs-Perl-Critic/issues
   homepage: https://github.com/skirmess/Dist-Zilla-Plugin-AutoPrereqs-Perl-Critic
   repository: https://github.com/skirmess/Dist-Zilla-Plugin-AutoPrereqs-Perl-Critic.git
-version: '0.004'
+version: '0.005'
 x_BuiltWith:
   modules:
     CPAN::Meta::YAML: '0.018'
@@ -150,7 +150,7 @@ x_BuiltWith:
     Test::Fatal: '0.014'
     Test::Kwalitee: '1.26'
     Test::MinimumVersion: '0.101082'
-    Test::MockModule: '0.12'
+    Test::MockModule: '0.13'
     Test::Mojibake: '1.3'
     Test::More: '1.302106'
     Test::NoTabs: '2.00'
@@ -618,7 +618,7 @@ x_Dist_Zilla:
           branch: ~
           changelog: Changes
           signed: '0'
-          tag: '0.004'
+          tag: '0.005'
           tag_format: '%v'
           tag_message: ''
         Dist::Zilla::Role::Git::Repo:

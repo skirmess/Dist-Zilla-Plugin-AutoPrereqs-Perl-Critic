@@ -4,7 +4,7 @@ use 5.006;
 use strict;
 use warnings;
 
-our $VERSION = '0.004';
+our $VERSION = '0.005';
 
 use Moose;
 with qw(
@@ -163,7 +163,7 @@ Dist::Zilla::Plugin::AutoPrereqs::Perl::Critic - automatically extract Perl::Cri
 
 =head1 VERSION
 
-Version 0.004
+Version 0.005
 
 =head1 SYNOPSIS
 
