@@ -43,6 +43,12 @@ which will come with the core policies.
 Note: This feature needs HTTP access to **cpanmetadb.plackperl.org**. Please
 disable this feature if you're system cannot access that server.
 
+Note: To reduce network traffic and remove the delay caused by the network
+access the cache file `.perlcritic_package.yml` is generated. You can either
+add this file to your `.gitignore` file or add it to Git. It will be updated
+as soon as the system runs a newer version of [Perl::Critic](https://metacpan.org/pod/Perl::Critic)
+then the one that is mentioned in the cache file.
+
 ## type
 
 By default, the dependencies are added as **type** **requires**. This can be changed

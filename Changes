@@ -2,6 +2,8 @@ Revision history for Dist-Zilla-Plugin-AutoPrereqs-Perl-Critic
 
 {{$NEXT}}
 
+  - Create a .perlcritic_package.yml cache file to reduce network access
+
 0.004  2017-09-21 22:39:29 UTC
 
   - Added a test for no Internet access
