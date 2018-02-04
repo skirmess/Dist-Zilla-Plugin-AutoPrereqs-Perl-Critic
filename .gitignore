@@ -2,6 +2,7 @@
 *~
 .*.swp
 .build
+.cache
 .perlcritic_package.yml
 Dist-Zilla-Plugin-AutoPrereqs-Perl-Critic-*
 tmp
