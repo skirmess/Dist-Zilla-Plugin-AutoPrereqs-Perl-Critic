@@ -2,6 +2,7 @@ Revision history for Dist-Zilla-Plugin-AutoPrereqs-Perl-Critic
 
 {{$NEXT}}
 
+  - Removed cpanfile from distribution
   - Replaced plugin bundle Author::SKIRMESS with an inline bundle through a Git submodule on https://github.com/skirmess/dzil-inc
 
 0.005  2017-10-21 09:53:51 UTC
