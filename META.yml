@@ -49,5 +49,4 @@ resources:
   homepage: https://github.com/skirmess/Dist-Zilla-Plugin-AutoPrereqs-Perl-Critic
   repository: https://github.com/skirmess/Dist-Zilla-Plugin-AutoPrereqs-Perl-Critic.git
 version: '0.005'
-x_authority: cpan:SKIRMESS
 x_serialization_backend: 'YAML::Tiny version 1.70'
