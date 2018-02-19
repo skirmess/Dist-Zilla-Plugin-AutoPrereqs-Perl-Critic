@@ -22,9 +22,6 @@ name: Dist-Zilla-Plugin-AutoPrereqs-Perl-Critic
 no_index:
   directory:
     - corpus
-    - dzil-inc
-    - examples
-    - inc
     - t
     - xt
 provides:
