@@ -2,6 +2,7 @@ Revision history for Dist-Zilla-Plugin-AutoPrereqs-Perl-Critic
 
 {{$NEXT}}
 
+  - Increased Moose dependency to 2.1203 because older versions break with current Module::Runtime
   - Turn include_dotfiles of Git::GatherDir on because we have dot files in the corpus directory
   - Turn include_dotfiles of GatherDir n the tests on because we have dot files in the corpus directory
   - Added xt/author/perltidy.t test based on Test::PerlTidy

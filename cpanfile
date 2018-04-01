@@ -2,7 +2,7 @@ requires 'CPAN::Meta::YAML';
 requires 'CPAN::Version';
 requires 'Dist::Zilla::Role::PrereqSource';
 requires 'HTTP::Tiny';
-requires 'Moose';
+requires 'Moose', '2.1203';
 requires 'Moose::Util::TypeConstraints';
 requires 'Path::Tiny';
 requires 'Perl::Critic';
