@@ -187,19 +187,19 @@ directory.
 
 =head2 phase
 
-By default, the dependencies are added to the B<develop> B<phase>. This can be
+By default, the dependencies are added to the C<develop> C<phase>. This can be
 changed to every valid phase.
 
 =head2 remove_core_policies
 
 By default, policies that are included in the latest
 L<Perl::Critic|Perl::Critic> distribution are not added as dependency. This
-can be changed by setting B<remove_core_policies> to B<0>.
+can be changed by setting C<remove_core_policies> to C<0>.
 
 Note: L<Perl::Critic|Perl::Critic> itself is always added as dependency
 which will come with the core policies.
 
-Note: This feature needs HTTP access to B<cpanmetadb.plackperl.org>. Please
+Note: This feature needs HTTP access to C<cpanmetadb.plackperl.org>. Please
 disable this feature if you're system cannot access that server.
 
 Note: To reduce network traffic and remove the delay caused by the network
@@ -210,7 +210,7 @@ then the one that is mentioned in the cache file.
 
 =head2 type
 
-By default, the dependencies are added as B<type> B<requires>. This can be changed
+By default, the dependencies are added as C<type> C<requires>. This can be changed
 to every valid phase.
 
 =head1 SUPPORT

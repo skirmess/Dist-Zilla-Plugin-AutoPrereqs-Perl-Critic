@@ -28,19 +28,19 @@ directory.
 
 ## phase
 
-By default, the dependencies are added to the **develop** **phase**. This can be
+By default, the dependencies are added to the `develop` `phase`. This can be
 changed to every valid phase.
 
 ## remove\_core\_policies
 
 By default, policies that are included in the latest
 [Perl::Critic](https://metacpan.org/pod/Perl::Critic) distribution are not added as dependency. This
-can be changed by setting **remove\_core\_policies** to **0**.
+can be changed by setting `remove_core_policies` to `0`.
 
 Note: [Perl::Critic](https://metacpan.org/pod/Perl::Critic) itself is always added as dependency
 which will come with the core policies.
 
-Note: This feature needs HTTP access to **cpanmetadb.plackperl.org**. Please
+Note: This feature needs HTTP access to `cpanmetadb.plackperl.org`. Please
 disable this feature if you're system cannot access that server.
 
 Note: To reduce network traffic and remove the delay caused by the network
@@ -51,7 +51,7 @@ then the one that is mentioned in the cache file.
 
 ## type
 
-By default, the dependencies are added as **type** **requires**. This can be changed
+By default, the dependencies are added as `type` `requires`. This can be changed
 to every valid phase.
 
 # SUPPORT
