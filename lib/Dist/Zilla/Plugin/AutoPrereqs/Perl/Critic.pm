@@ -7,9 +7,7 @@ use warnings;
 our $VERSION = '0.006';
 
 use Moose;
-with qw(
-  Dist::Zilla::Role::PrereqSource
-);
+with 'Dist::Zilla::Role::PrereqSource';
 
 use CPAN::Meta::YAML;
 use CPAN::Version;
