@@ -8,7 +8,7 @@ use CPAN::Meta::YAML;
 use Test::DZil;
 use Test::Fatal;
 use Test::MockModule;
-use Test::More;
+use Test::More 0.88;
 use Path::Tiny;
 
 use lib 't/lib';

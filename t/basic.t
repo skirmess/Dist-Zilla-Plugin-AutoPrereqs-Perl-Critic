@@ -7,7 +7,7 @@ use warnings;
 use Test::DZil;
 use Test::Fatal;
 use Test::MockModule;
-use Test::More;
+use Test::More 0.88;
 
 use lib 't/lib';
 use Local::HTTP::Tiny::Mock;

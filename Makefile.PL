@@ -33,7 +33,7 @@ my %WriteMakefileArgs = (
     "Test::DZil" => 0,
     "Test::Fatal" => 0,
     "Test::MockModule" => 0,
-    "Test::More" => 0,
+    "Test::More" => "0.88",
     "lib" => 0
   },
   "VERSION" => "0.006",
@@ -55,7 +55,7 @@ my %FallbackPrereqs = (
   "Test::DZil" => 0,
   "Test::Fatal" => 0,
   "Test::MockModule" => 0,
-  "Test::More" => 0,
+  "Test::More" => "0.88",
   "lib" => 0,
   "namespace::autoclean" => 0,
   "strict" => 0,
