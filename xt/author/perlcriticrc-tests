@@ -1,4 +1,3 @@
-[-Bangs::ProhibitNumberedNames]
 [-CodeLayout::RequireTrailingCommaAtNewline]
 [-Modules::RequireExplicitInclusion]
 [-ValuesAndExpressions::ProhibitEmptyQuotes]

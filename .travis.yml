@@ -16,42 +16,24 @@ git:
 
 matrix:
   include:
-    - perl: '5.8.8'
-      env: DIST_ZILLA=5.048
-
-    - perl: '5.10.0'
-      env: DIST_ZILLA=5.048
-
-    - perl: '5.10'
-      env: DIST_ZILLA=5.048
-
-    - perl: '5.12'
-      env: DIST_ZILLA=5.048
-
     - perl: '5.14'
-      env: DIST_ZILLA=6.012
 
     - perl: '5.16'
-      env: DIST_ZILLA=6.012
 
     - perl: '5.18'
-      env: DIST_ZILLA=6.012
 
     - perl: '5.18'
-      env: DIST_ZILLA=6.012 AUTHOR_TESTING=1
+      env: AUTHOR_TESTING=1
       os: osx
 
     - perl: '5.20'
-      env: DIST_ZILLA=6.012
 
     - perl: '5.22'
-      env: DIST_ZILLA=6.012
 
     - perl: '5.24'
-      env: DIST_ZILLA=6.012 AUTHOR_TESTING=1
+      env: AUTHOR_TESTING=1
 
     - perl: '5.26'
-      env: DIST_ZILLA=6.012
 
 before_install:
   - |
@@ -72,25 +54,6 @@ before_install:
         eval $(perl -I $HOME/perl5/lib/perl5/ -Mlocal::lib)
         ;;
     esac
-  - |
-    if [[ $TRAVIS_PERL_VERSION =~ 5[.][1-9][0-9]*[.][0-9][0-9]* ]]
-    then
-        echo "Initializing the Travis Perl Helper"
-
-        if [ -z "$AUTHOR_TESTING" ]
-        then
-            AUTHOR_TESTING=0
-        fi
-
-        git clone git://github.com/travis-perl/helpers ~/travis-perl-helpers
-        source ~/travis-perl-helpers/init
-        build-perl
-
-        if [ "$AUTHOR_TESTING" = 0 ]
-        then
-            unset AUTHOR_TESTING
-        fi
-    fi
   - which perl
   - perl -V
   - curl -L https://raw.githubusercontent.com/skirmess/dzil-inc/master/bin/check-ci-perl-version | perl - --travis
@@ -102,19 +65,13 @@ before_install:
 
 install:
   - |
-    if [ -n "$DIST_ZILLA" ]
-    then
-        cpanm --verbose --notest --skip-satisfied Dist::Zilla@$DIST_ZILLA
-        dzil version
-    fi
-  - |
     if [ -n "$AUTHOR_TESTING" ]
     then
-        cpanm --verbose --installdeps --notest --skip-satisfied --with-develop .
+        cpanm --verbose --installdeps --notest --with-develop .
     else
-        cpanm --verbose --installdeps --notest --skip-satisfied .
+        cpanm --verbose --installdeps --notest .
     fi
-  - cpanm --verbose --notest --skip-satisfied App::ReportPrereqs
+  - cpanm --verbose --notest App::ReportPrereqs
   - |
     if [ -n "$AUTHOR_TESTING" ]
     then

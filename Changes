@@ -2,6 +2,7 @@ Revision history for Dist-Zilla-Plugin-AutoPrereqs-Perl-Critic
 
 {{$NEXT}}
 
+  - Removed minimal dependency on Moose 2.1203
   - Code cleanup - moved all 'use' before 'has'
 
 0.006  2018-04-02 22:51:55 UTC
