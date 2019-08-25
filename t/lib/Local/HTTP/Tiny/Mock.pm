@@ -1,8 +1,12 @@
 package Local::HTTP::Tiny::Mock;
 
+## no critic
+
 use 5.006;
 use strict;
 use warnings;
+
+our $VERSION = '0.001';
 
 sub get_200 {
 
