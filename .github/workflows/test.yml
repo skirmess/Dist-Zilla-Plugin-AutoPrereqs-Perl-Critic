@@ -502,6 +502,7 @@ jobs:
           packages: >-
             gcc-core
             gcc-g++
+            git
             libcrypt-devel
             libssl-devel
             make
@@ -698,10 +699,6 @@ jobs:
       - name: cpanm --version
         run: ${{ steps.perl.outputs.bin }} ${{ steps.installsitebin.outputs.path }}\cpanm --version
 
-        # https://github.com/rjbs/Dist-Zilla/issues/669
-      - run: ${{ steps.perl.outputs.bin }} ${{ steps.installsitebin.outputs.path }}\cpanm --verbose --notest PPI
-        if: matrix.perl == '5.20.3'
-
       - name: cpanm --installdeps --notest .
         run: ${{ steps.perl.outputs.bin }} ${{ steps.installsitebin.outputs.path }}\cpanm --verbose --installdeps --notest .
         working-directory: ${{ github.event.repository.name }}
@@ -749,6 +746,7 @@ jobs:
             packages: >-
               g++
               gcc
+              git
               libio-socket-ssl-perl
               liblwp-protocol-https-perl
               libnet-ssleay-perl
@@ -759,6 +757,7 @@ jobs:
             packages: >-
               gcc
               gcc-c++
+              git
               make
               perl-IO-Socket-SSL
               perl-Net-SSLeay
