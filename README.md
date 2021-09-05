@@ -17,12 +17,12 @@ Version 0.006
 
 # DESCRIPTION
 
-This plugin will add [Perl::Critic](https://metacpan.org/pod/Perl::Critic) and all policies used by it,
+This plugin will add [Perl::Critic](https://metacpan.org/pod/Perl%3A%3ACritic) and all policies used by it,
 in the installed version, as distribution prerequisites.
 
 ## critic\_config
 
-By default no policy is specified which lets [Perl::Critic](https://metacpan.org/pod/Perl::Critic)
+By default no policy is specified which lets [Perl::Critic](https://metacpan.org/pod/Perl%3A%3ACritic)
 find the config itself. This defaults to `.perlcriticrc` in the current
 directory.
 
@@ -34,10 +34,10 @@ changed to every valid phase.
 ## remove\_core\_policies
 
 By default, policies that are included in the latest
-[Perl::Critic](https://metacpan.org/pod/Perl::Critic) distribution are not added as dependency. This
+[Perl::Critic](https://metacpan.org/pod/Perl%3A%3ACritic) distribution are not added as dependency. This
 can be changed by setting `remove_core_policies` to `0`.
 
-Note: [Perl::Critic](https://metacpan.org/pod/Perl::Critic) itself is always added as dependency
+Note: [Perl::Critic](https://metacpan.org/pod/Perl%3A%3ACritic) itself is always added as dependency
 which will come with the core policies.
 
 Note: This feature needs HTTP access to `cpanmetadb.plackperl.org`. Please
@@ -46,7 +46,7 @@ disable this feature if you're system cannot access that server.
 Note: To reduce network traffic and remove the delay caused by the network
 access the cache file `.perlcritic_package.yml` is generated. You can either
 add this file to your `.gitignore` file or add it to Git. It will be updated
-as soon as the system runs a newer version of [Perl::Critic](https://metacpan.org/pod/Perl::Critic)
+as soon as the system runs a newer version of [Perl::Critic](https://metacpan.org/pod/Perl%3A%3ACritic)
 then the one that is mentioned in the cache file.
 
 ## type
@@ -85,6 +85,6 @@ This is free software, licensed under:
 
 # SEE ALSO
 
-[Dist::Zilla::Plugin::AutoPrereqs](https://metacpan.org/pod/Dist::Zilla::Plugin::AutoPrereqs),
-[Perl::Critic](https://metacpan.org/pod/Perl::Critic),
-[Test::Perl::Critic](https://metacpan.org/pod/Test::Perl::Critic)
+[Dist::Zilla::Plugin::AutoPrereqs](https://metacpan.org/pod/Dist%3A%3AZilla%3A%3APlugin%3A%3AAutoPrereqs),
+[Perl::Critic](https://metacpan.org/pod/Perl%3A%3ACritic),
+[Test::Perl::Critic](https://metacpan.org/pod/Test%3A%3APerl%3A%3ACritic)

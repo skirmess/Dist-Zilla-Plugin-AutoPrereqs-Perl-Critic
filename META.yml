@@ -13,7 +13,7 @@ configure_requires:
   ExtUtils::MakeMaker: '0'
   perl: '5.006'
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 6.022, CPAN::Meta::Converter version 2.150010'
+generated_by: 'Dist::Zilla, CPAN::Meta::Converter'
 license: open_source
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -24,10 +24,6 @@ no_index:
     - corpus
     - t
     - xt
-provides:
-  Dist::Zilla::Plugin::AutoPrereqs::Perl::Critic:
-    file: lib/Dist/Zilla/Plugin/AutoPrereqs/Perl/Critic.pm
-    version: '0.006'
 requires:
   CPAN::Meta::YAML: '0'
   CPAN::Version: '0'
@@ -46,6 +42,4 @@ resources:
   homepage: https://github.com/skirmess/Dist-Zilla-Plugin-AutoPrereqs-Perl-Critic
   repository: https://github.com/skirmess/Dist-Zilla-Plugin-AutoPrereqs-Perl-Critic.git
 version: '0.006'
-x_generated_by_perl: v5.24.0
-x_serialization_backend: 'YAML::Tiny version 1.73'
 x_spdx_expression: BSD-2-Clause-FreeBSD
