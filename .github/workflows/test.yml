@@ -786,14 +786,6 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - distribution: 'Alpine'
-            packages: >-
-              g++
-              gcc
-              make
-              perl
-              perl-crypt-ssleay
-              perl-io-socket-ssl
           - distribution: 'Debian'
             packages: >-
               g++
@@ -805,15 +797,6 @@ jobs:
               libperl-dev
               make
               wget
-          - distribution: 'openSUSE-Leap-15.2'
-            packages: >-
-              gcc
-              gcc-c++
-              git
-              make
-              perl-IO-Socket-SSL
-              perl-Net-SSLeay
-              which
           - distribution: 'Ubuntu-16.04'
             packages: >-
               g++
@@ -829,13 +812,6 @@ jobs:
               libnet-ssleay-perl
               make
           - distribution: 'Ubuntu-20.04'
-            packages: >-
-              g++
-              gcc
-              libio-socket-ssl-perl
-              libnet-ssleay-perl
-              make
-          - distribution: 'Ubuntu-22.04'
             packages: >-
               g++
               gcc
