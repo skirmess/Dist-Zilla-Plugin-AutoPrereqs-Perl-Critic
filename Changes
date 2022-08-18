@@ -2,6 +2,7 @@ Revision history for Dist-Zilla-Plugin-AutoPrereqs-Perl-Critic
 
 {{$NEXT}}
 
+  - Switch license to the ISC license
   - Removed minimal dependency on Moose 2.1203
   - Code cleanup - moved all 'use' before 'has'
 

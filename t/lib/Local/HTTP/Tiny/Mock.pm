@@ -1,10 +1,24 @@
-package Local::HTTP::Tiny::Mock;
-
-## no critic
+# vim: ts=4 sts=4 sw=4 et: syntax=perl
+#
+# Copyright (c) 2017-2022 Sven Kirmess
+#
+# Permission to use, copy, modify, and distribute this software for any
+# purpose with or without fee is hereby granted, provided that the above
+# copyright notice and this permission notice appear in all copies.
+#
+# THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+# WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+# ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+# WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+# ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+# OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 use 5.006;
 use strict;
 use warnings;
+
+package Local::HTTP::Tiny::Mock;
 
 our $VERSION = '0.001';
 
@@ -16,7 +30,8 @@ sub get_200 {
 
         return {
             'url'     => 'http://cpanmetadb.plackperl.org/v1.0/package/Perl::Critic',
-            'content' => '---
+            'content' => <<'EOF',
+---
 distfile: P/PE/PETDANCE/Perl-Critic-1.130.tar.gz
 provides:
   Perl::Critic: 1.130
@@ -215,7 +230,7 @@ provides:
   Perl::Critic::Violation: 1.130
   Test::Perl::Critic::Policy: 1.130
 version: 1.130
-',
+EOF
             'protocol' => 'HTTP/1.1',
             'headers'  => {
                 'server'         => 'nginx/1.6.3',
@@ -230,16 +245,16 @@ version: 1.130
                 'age'            => '130393',
                 'via'            => [
                     '1.1 varnish',
-                    '1.1 varnish'
+                    '1.1 varnish',
                 ],
                 'accept-ranges'       => 'bytes',
                 'fastly-debug-digest' => '5bd2af97315cd0addda0fd4657bbd4cf437331d546f05b2adba5573b6c88c030',
                 'x-runtime'           => '0.085299',
-                'x-served-by'         => 'cache-sjc3147-SJC, cache-hhn1546-HHN'
+                'x-served-by'         => 'cache-sjc3147-SJC, cache-hhn1546-HHN',
             },
             'status'  => '200',
             'success' => 1,
-            'reason'  => 'OK'
+            'reason'  => 'OK',
         };
     };
 }
@@ -258,7 +273,7 @@ sub get_404 {
                 'content-type'  => 'text/plain',
                 'via'           => [
                     '1.1 varnish',
-                    '1.1 varnish'
+                    '1.1 varnish',
                 ],
                 'fastly-debug-digest' => 'abe8f8abc3c33a054b261732aa0cb98d62f1ca227a5aafd2fa53981ccd3d1f62',
                 'connection'          => 'keep-alive',
@@ -267,19 +282,16 @@ sub get_404 {
                 'x-cache-hits'        => '0, 0',
                 'x-runtime'           => '0.046718',
                 'content-length'      => '10',
-                'age'                 => '0'
+                'age'                 => '0',
             },
             'protocol' => 'HTTP/1.1',
-            'content'  => 'Not found
-',
-            'success' => '',
-            'status'  => '404',
-            'url'     => 'http://cpanmetadb.plackperl.org/v1.0/package/Perl::Critic_does_not_exist',
-            'reason'  => 'Not Found'
+            'content'  => "Not found\n",
+            'success'  => q{},
+            'status'   => '404',
+            'url'      => 'http://cpanmetadb.plackperl.org/v1.0/package/Perl::Critic_does_not_exist',
+            'reason'   => 'Not Found',
         };
     };
 }
 
 1;
-
-# vim: ts=4 sts=4 sw=4 et: syntax=perl
